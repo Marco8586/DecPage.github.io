@@ -1,3 +1,13 @@
+//Nav 
+const menuIcon = document.querySelector('.menu-icon');
+const mainNav = document.querySelector('.main-nav');
+const getStarted = document.querySelector('.get-started');
+
+menuIcon.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+  getStarted.classList.toggle('show');
+});
+
 //Modal carrito
 const cartBtn = document.getElementById('cartBtn');
 const modalContainer = document.querySelector('.modal-container');
