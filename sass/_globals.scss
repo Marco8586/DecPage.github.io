@@ -39,12 +39,14 @@ a{
     height: 4rem;
     background-color: white;
     border-bottom: 2px solid #c0c0c0;
+    .logo img {
+      max-width: 7rem;
+    }
+    .menu-icon{
+      display: none;
+    }
 }
-  
-.logo img {
-    max-width: 7rem;
-}
-  
+
 .sec-home {
     width: 100%;
     max-width: 992px;
@@ -218,6 +220,9 @@ a{
   
   #cartBtn {
     border: none;
+    &:focus{
+      outline: none;
+    }
   }
   
   .modal-container {
@@ -400,8 +405,10 @@ a{
   }
 
   @media (max-width: 990px){
-    nav .menu .main-nav li a {
-      display: none;
+    nav{
+      .main-nav{
+        display: none;
+      }
     }
     .login{
       display: flex;
@@ -435,12 +442,44 @@ a{
     }
   }
   @media (max-width: 399px) {
-    nav .menu .main-nav li a {
-      display: none;
-    }
     nav{
+      justify-content: space-between !important;
+      padding: 0 25px !important;
       width: 100%;
+      .main-nav {
+        display: none !important;
+      }
+      .get-started{
+        display: none !important;
+      }
+
+      .menu-icon{
+        display: block !important;
+      }
+
+      .get-started.show{
+        display: flex !important;
+        flex-direction: column;
+        position: relative;
+        top: 60px;
+        left: 62px;
+      }
+      .get-started {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        button, #likeBtn{
+          width: 100%;
+          text-align: center; 
+          button, :hover{
+            background-color: rgb(218, 218, 218);
+          }
+        }
+      }
     }
+
     .col {
       text-align: center;
     }
@@ -456,9 +495,42 @@ a{
     .sec-home {
       display: none;
     }
+    .sec-benefits{
+      .row{
+        .currency{
+          margin-top: 10px;
+        }
+      }
+    }
+    .login{
+      width: 100%;
+    }
+    .modal-container-likes{
+      .modal-content{
+        .like-items{
+          .cart-item{
+            img{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .modal-container{
+      .modal-content{
+        .cart-items{
+          .cart-item{
+            img{
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
   @media (max-width: 290px) {
     .sec-home {
       display: none;
     }
+    
   }
